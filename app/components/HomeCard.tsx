@@ -42,13 +42,13 @@ const HomeCard: React.FC<{ card: HomeCardProps }> = ({ card }) => {
         </figure>
 
         <div className="flex flex-col justify-start text-[#443D32]">
-          <h1 className="text-[14px] md:text-[21px] my-4 font-pt-serif max-sm:my-2">{card.title}</h1>
-          <p className="font-inter text-[10px] md:text-[13px] pr-6 sm:leading-[21px] text-left line-clamp-4">{card.description}</p>
+          <h1 className="text-[14px] md:text-[22px] my-4 font-pt-serif max-sm:my-2">{card.title}</h1>
+          <p className="font-inter text-[10px] md:text-[15px] pr-6 sm:leading-[21px] text-left line-clamp-4">{card.description}</p>
         </div>
       </div>
 
       <Link href={urlType === 'desktop' ? card.buttonLink : card.mobileLink}
-        className="font-inter self-start uppercase rounded-[3px] font-semibold py-1 px-2 md:py-2 md:px-3 text-white text-[8px] md:text-[10.5px]"
+        className="font-inter self-start uppercase rounded-[3px] font-semibold py-2 px-4 md:py-3 md:px-5 text-white text-[8px] md:text-[10.5px]"
         style={{ backgroundColor: isHovered ? card.hoverColor : card.color }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
