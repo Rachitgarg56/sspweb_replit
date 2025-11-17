@@ -4,11 +4,11 @@ import { NextResponse } from 'next/server';
 
 const typesense = new Typesense.Client({
   nodes: [{
-    host: 'b4es230vctrgl7mhp-1.a1.typesense.net',
+    host: process.env.TYPESENSE_HOST || 'b4es230vctrgl7mhp-1.a1.typesense.net',
     port: 443,
     protocol: 'https'
   }],
-  apiKey: '7uFptqJOs8QsyMOi84YQil8JfXXfA47H', 
+  apiKey: process.env.TYPESENSE_API_KEY || '', 
   connectionTimeoutSeconds: 5
 });
 
