@@ -9,7 +9,13 @@ interface Props {
 }
 
 const getTemple = cache(async (slugStr: string) => {
-    const res = await fetch(`${API_URL}tp/temples/${slugStr}`);
+    const apiPath = slugStr ? `temples/${slugStr}` : 'temples';
+    const res = await fetch(`${API_URL}${apiPath}`, {
+        cache: 'no-store'
+    });
+    if (!res.ok) {
+        return null;
+    }
     const data = await res.json();
     return data;
 });

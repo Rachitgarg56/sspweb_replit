@@ -20,7 +20,7 @@ interface Temple {
 
 interface Props {
     params: Promise<{ slug: string[] }>; 
-    templeData: Temple;
+    templeData: Temple | null;
 }
 
 export default function Page({ params, templeData }: Props) {
@@ -31,7 +31,7 @@ export default function Page({ params, templeData }: Props) {
       { title: "Home", link: "/" },
       { title: "Pilgrim Info", link: "/pilgrim-info", desktopClick: false },
       { title: "Temples", link: "/temples" },
-      { title: templeData.title, link: '/'+templeData.link },
+      { title: templeData?.title, link: templeData?.link ? '/'+templeData.link : '' },
     ].filter(t => t.title)
     
     const breadcrumbsSeperator = "|"
@@ -44,6 +44,21 @@ export default function Page({ params, templeData }: Props) {
 
       fetchSidebarData();
     },[pathname])
+
+    if (!templeData) {
+        return (
+            <section className="p-4 bg-[--gray-100]">
+                <div className="max-w-[1175px] m-auto flex flex-col gap-4">
+                    <div className='py-4'>
+                        <BreadCrumbs breadcrumbs={[{ title: "Home", link: "/" }, { title: "Pilgrim Info", link: "/pilgrim-info", desktopClick: false }, { title: "Temples", link: "/temples" }]} breadcrumbsSeperator={breadcrumbsSeperator} />
+                    </div>
+                    <div className="flex flex-col w-full py-4 px-12 bg-[#FFFFFF] max-lg:px-6 max-[462px]:px-4">
+                        <p className="text-center text-[var(--pilgrim)]">Loading temples information...</p>
+                    </div>
+                </div>
+            </section>
+        );
+    }
 
     return (
       <section className="p-4 bg-[--gray-100]">

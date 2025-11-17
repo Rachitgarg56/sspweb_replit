@@ -8,8 +8,9 @@ interface Props {
 
 export async function GET(request: Request, props: Props) {
     const params = await props.params;
-    const slug = `${params.slug.join('/')}`;
-    const response = await db.collection('temporaryPages').where("link", "==", `temples/${slug}`).get();
+    const slug = params.slug ? `${params.slug.join('/')}` : '';
+    const link = slug ? `temples/${slug}` : 'temples';
+    const response = await db.collection('temporaryPages').where("link", "==", link).get();
 
     if (response.empty) {
         return NextResponse.json({ error: 'temple not found' }, { status: 404 });
