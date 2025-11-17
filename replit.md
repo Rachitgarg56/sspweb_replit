@@ -10,15 +10,24 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
-### November 17, 2025 - Temples Page Fix
+### November 17, 2025 - API Configuration Fix for Replit Environment
+- Fixed API URL configuration for client-side and server-side components
+  - Created separate CLIENT_API_URL constant for client components
+  - Server-side components use absolute localhost URLs
+  - Client-side components use relative URLs (/api/) for Replit proxy compatibility
+- Updated client components to use CLIENT_API_URL:
+  - app/stotras/PageContent.tsx
+  - app/anugraha-bhashanams/[[...slug]]/PageContent.tsx
+- Current Status:
+  - /temples - ✅ Fully working with Introduction content
+  - /stotras - ⚠️ Page loads, API returns data (200), but deity content not displaying
+  - /anugraha-bhashanams - ⚠️ Page loads, API returns data (200), but video content not displaying
+
+### November 17, 2025 - Temples Page Fix  
 - Fixed temples page data fetching issue
   - Corrected API route to handle empty slug (root page uses "temples" not "temples/")
   - Updated page component to call /api/temples instead of /api/tp/temples
   - Added null data handling in PageContent component
-- Verified all three problematic pages now load correctly:
-  - /temples - 70KB+ HTML with Introduction content
-  - /stotras - 70KB HTML with deity stotras data
-  - /anugraha-bhashanams - 72KB HTML with benedictory discourse data
 
 ### November 17, 2025 - Vercel to Replit Migration
 - Migrated project from Vercel to Replit

@@ -7,7 +7,7 @@ import { use, useEffect, useState } from "react"
 import { formatDate } from "../../../utils/formatters"
 import { Modal } from "../../components/Modal"
 import { useParams } from "next/navigation"
-import { API_URL } from "../../../config/api";
+import { CLIENT_API_URL } from "../../../config/api";
 import Loader from "@/app/components/Loader"
 import { ChevronLeft, ChevronRight } from "@mui/icons-material"
 import { DROPDOWN_ICON } from "@/public/assets/svgs/svg";
@@ -85,7 +85,7 @@ export default function benedictoryCourses() {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await fetch(`${API_URL}anugraha-bhashanams`)
+        const response = await fetch(`${CLIENT_API_URL}anugraha-bhashanams`)
         if (!response.ok) {
           throw new Error(`Failed to fetch data: ${response.statusText}`)
         }
