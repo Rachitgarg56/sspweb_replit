@@ -10,6 +10,16 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
+### November 17, 2025 - Temples Page Fix
+- Fixed temples page data fetching issue
+  - Corrected API route to handle empty slug (root page uses "temples" not "temples/")
+  - Updated page component to call /api/temples instead of /api/tp/temples
+  - Added null data handling in PageContent component
+- Verified all three problematic pages now load correctly:
+  - /temples - 70KB+ HTML with Introduction content
+  - /stotras - 70KB HTML with deity stotras data
+  - /anugraha-bhashanams - 72KB HTML with benedictory discourse data
+
 ### November 17, 2025 - Vercel to Replit Migration
 - Migrated project from Vercel to Replit
 - Updated development server to run on port 5000 (Replit requirement)
