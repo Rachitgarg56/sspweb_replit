@@ -1,0 +1,16 @@
+/* Scrollbar track */
+.announcements-scrollbar::-webkit-scrollbar {
+    height: 4px;
+    /* margin: 0 20px; */
+}
+
+/* Scrollbar thumb */
+.announcements-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #FF6B35;
+    /* border-radius: 4px; */
+}
+
+/* Scrollbar track background */
+.announcements-scrollbar::-webkit-scrollbar-track {
+    background-color: #FAF7F4;
+}

@@ -1,0 +1,223 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Grays */
+--gray-100: #F7F2EC;
+--gray-200: #EBE3D9;
+--brown-light: #B4A597;
+--brown-medium: #7E6F5C;
+--brown-dark: #4B3729;
+
+/* announcement bar */
+--learn-more: #F56F1C;
+
+/* Events */
+--events: #FFA500;
+--events-hover: #F49600;
+
+/* Pilgrim Info */
+--pilgrim: #F47527;
+--pilgrim-hover: #E26114;
+
+/* Resources */
+--resources: #D04843;
+--resources-hover: #BA3933;
+
+/* Online Services */
+--online-services: #98649D;
+--online-services-hover: #834C88;
+
+/* About */
+--about: #4D809F;
+--about-hover: #306584;
+
+/* Contact */
+--contact: #65A29A;
+--contact-hover: #468981;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+
+/* fonts  */
+@layer base {
+  .font-inter {
+    font-family: var(--font-inter);
+  }
+  .font-pt-serif {
+    font-family: var(--font-pt-serif);
+  }
+  .font-noto-sans {
+    font-family: var(--font-noto-sans);
+  }
+}
+
+/* Add these styles to hide scrollbar */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.xprose h2, .xprose h1 {
+  @apply font-pt-serif;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  font-weight: normal;
+}
+
+.xprose h2 {
+  font-size: 21px;
+}
+
+.xprose h1 {
+  font-size: 37px;
+}
+
+.xprose h3, .xprose h4 {
+  @apply font-pt-serif;
+  font-weight: normal;
+}
+.xprose h3 {
+  font-size: 17px;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+}
+.xprose h4 {
+  font-size: 15px;
+  margin-bottom: 0.25rem;
+  margin-top: 1rem;
+}
+
+.xprose.pilgrim h1, .xprose.pilgrim h2, .xprose.pilgrim h3, .xprose.pilgrim h4 {
+  color: var(--pilgrim);
+}
+
+.xprose.about h1, .xprose.about h2, .xprose.about h3, .xprose.about h4 {
+  color: var(--about);
+}
+
+.xprose.contact h1, .xprose.contact h2, .xprose.contact h3, .xprose.contact h4 {
+  color: var(--contact);
+}
+
+.xprose.events h1, .xprose.events h2, .xprose.events h3, .xprose.events h4 {
+  color: var(--events);
+}
+
+.xprose p {
+  @apply font-inter;
+  color: var(--brown-dark);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.625;
+}
+
+.xprose p + p {
+  @apply font-inter;
+  margin-top: 1rem;
+}
+
+.xprose p:has(> em) + p:has(> em) {
+  margin-top: 0;
+}
+
+.xprose blockquote {
+  @apply font-inter;
+  margin-top: 0.5rem;
+  color: var(--brown-light);
+  font-size: 11px;
+  font-style: italic;
+}
+
+.xprose blockquote + p {
+  margin-top: 2rem;
+}
+
+.xprose ul {
+  list-style-type: disc;
+}
+.xprose ol {
+  list-style-type: decimal;
+}
+
+.xprose ul, .xprose ol {
+  @apply font-inter;
+  margin-left: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 13px;
+  color: var(--brown-dark);
+}
+
+.xprose code, .xprose pre {
+  @apply font-pt-serif scrollbar-none;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--brown-dark);
+  background-color: var(--gray-100);
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+  text-align: center;
+  overflow-x: scroll;
+}
+
+.xprose h2 strong {
+  font-weight: normal;
+}
+
+.xprose p a, .xprose ul a {
+  color: var(--pilgrim);
+  word-wrap: break-word;
+}
+
+.xprose p a:hover {
+  text-decoration-line: underline;
+}
+
+.xprose p img:not(:first-of-type) {
+  margin-top: 1rem;
+}
+
+@media (max-width: 640px) { /* sm breakpoint */
+  .xprose h2 {
+    font-size: 12.5px;
+  }
+  .xprose h3 {
+    font-size: 11.5px;
+  }
+  .xprose h4 {
+    font-size: 10.5px;
+  }
+  .xprose p {
+    font-size: 9.5px;
+  }
+  .xprose blockquote {
+    font-size: 9.5px;
+  }
+  .xprose ul, .xprose ol {
+    font-size: 9.5px;
+  }
+  .xprose code, .xprose pre {
+    font-size: 9.5px;
+  }
+}
+
+
+.custom-dropdown {
+  -webkit-appearance: none; 
+}
+
