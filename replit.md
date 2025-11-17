@@ -10,18 +10,19 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
-### November 17, 2025 - API Configuration Fix for Replit Environment
-- Fixed API URL configuration for client-side and server-side components
-  - Created separate CLIENT_API_URL constant for client components
-  - Server-side components use absolute localhost URLs
-  - Client-side components use relative URLs (/api/) for Replit proxy compatibility
-- Updated client components to use CLIENT_API_URL:
-  - app/stotras/PageContent.tsx
-  - app/anugraha-bhashanams/[[...slug]]/PageContent.tsx
-- Current Status:
-  - /temples - ✅ Fully working with Introduction content
-  - /stotras - ⚠️ Page loads, API returns data (200), but deity content not displaying
-  - /anugraha-bhashanams - ⚠️ Page loads, API returns data (200), but video content not displaying
+### November 17, 2025 - Complete API Configuration Fix for Replit Environment
+- Fixed all API URL configuration issues for client-side components in Replit's proxy environment
+  - Created separate CLIENT_API_URL constant for client components (uses relative paths /api/)
+  - Server-side components continue to use absolute localhost URLs (API_URL)
+  - This separation is required because Replit serves the site through a proxy/iframe
+- Updated all affected client-side components and functions:
+  - app/stotras/PageContent.tsx - deity stotras fetching
+  - app/anugraha-bhashanams/[[...slug]]/PageContent.tsx - benedictory discourses fetching
+  - utils/helpers.ts getSidebarData() - sidebar navigation data fetching
+- Final Status - All Pages Working:
+  - ✅ /temples - Fully working with Introduction content and sidebar navigation
+  - ✅ /stotras - Fully working with deity stotras, language selectors, and collections
+  - ✅ /anugraha-bhashanams - Fully working with benedictory discourse videos and filters
 
 ### November 17, 2025 - Temples Page Fix  
 - Fixed temples page data fetching issue

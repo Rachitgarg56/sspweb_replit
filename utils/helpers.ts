@@ -3,7 +3,7 @@
 //     return html.replace(/<[^>]*>/g, '');
 // }
 
-import { API_URL } from "@/config/api";
+import { API_URL, CLIENT_API_URL } from "@/config/api";
 
 // export function getFirstNWords(text, n = 100) {
 //     return text.split(/\s+/).slice(0, n).join(' ');
@@ -28,7 +28,7 @@ export function replaceImageSrcDomain(pageDataContent: string) {
 
 export const getSidebarData = async (mainPageUrl: string) => {
     try {
-        const res = await fetch(`${API_URL + 'sidebars'}`);
+        const res = await fetch(`${CLIENT_API_URL}sidebars`);
         const parsedRes = await res.json();
         const sidebarData = parsedRes.find(d => d.url.startsWith(mainPageUrl));
         return sidebarData.sidebar;
