@@ -14,7 +14,7 @@ interface Props {
 }
 
 const EventsCalendarSection = ({ events }: Props) => {
-    const [view, setView] = useState('list-view')
+    const [view, setView] = useState('calendar-view')
 
     return (
         <section className="bg-[var(--gray-100)] py-12 px-4 max-sm:py-8 overflow-hidden">
@@ -24,15 +24,15 @@ const EventsCalendarSection = ({ events }: Props) => {
                         Event Calendar
                     </h2>
                     <div className="flex items-center gap-8 max-sm:self-start">
-                        <button onClick={()=>setView('list-view')} className={`flex gap-2 text-[10px] border-b-2 ${(view === 'list-view') ? 'border-[var(--pilgrim)] text-[#443D32] opacity-90' : 'text-[var(--brown-medium)] opacity-50 border-transparent'} whitespace-nowrap hover:border-[var(--pilgrim)] uppercase hover:text-[#443D32] font-semibold pb-1 px-1`}>
-                            {" "}
-                            <FormatListBulletedIcon sx={{ fontSize: 16 }} />{" "}
-                            <span className="font-inter text-[11px]">List View</span>
-                        </button>
                         <button onClick={()=>setView('calendar-view')} className={`flex gap-2 text-[10px] border-b-2 ${(view === 'calendar-view') ? 'border-[var(--pilgrim)] text-[#443D32] opacity-90' : 'text-[var(--brown-medium)] opacity-50 border-transparent'} whitespace-nowrap hover:border-[var(--pilgrim)] uppercase hover:text-[#443D32] font-semibold pb-1 px-1`}>
                             {" "}
                             <CalendarTodayIcon sx={{ fontSize: 16 }} />{" "}
                             <span className="font-inter text-[11px]">Calendar View</span>
+                        </button>
+                        <button onClick={()=>setView('list-view')} className={`flex gap-2 text-[10px] border-b-2 ${(view === 'list-view') ? 'border-[var(--pilgrim)] text-[#443D32] opacity-90' : 'text-[var(--brown-medium)] opacity-50 border-transparent'} whitespace-nowrap hover:border-[var(--pilgrim)] uppercase hover:text-[#443D32] font-semibold pb-1 px-1`}>
+                            {" "}
+                            <FormatListBulletedIcon sx={{ fontSize: 16 }} />{" "}
+                            <span className="font-inter text-[11px]">List View</span>
                         </button>
                     </div>
                 </div>
