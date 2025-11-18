@@ -1,0 +1,169 @@
+$ npm run dev
+
+> ssp_nextjs@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.1.3
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.1.117:3000
+
+ ✓ Starting...
+ ✓ Ready in 5.3s
+ ○ Compiling / ...
+ ✓ Compiled / in 21.6s (1439 modules)
+ ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+ ○ Compiling /middleware ...
+ ✓ Compiled /middleware in 6s (797 modules)
+ ○ Compiling /api/headerNotices ...
+ ✓ Compiled /api/headerNotices in 10.2s (1578 modules)
+[2025-11-18T08:30:23.937Z]  @firebase/firestore: Firestore (11.1.0): GrpcConnection RPC 'Listen' stream 0x62d56edf error. Code: 3 Message: 3 INVALID_ARGUMENT: Invalid resource field value in the request.
+[2025-11-18T08:30:24.009Z]  @firebase/firestore: Firestore (11.1.0): Could not reach Cloud Firestore backend. Connection failed 1 times. Most recent error: FirebaseError: [code=invalid-argument]: 3 INVALID_ARGUMENT: Invalid resource field value in the request.
+This typically indicates that your device does not have a healthy Internet connection at the moment. The client will operate in offline mode until it is able to successfully connect to the backend.
+ GET /api/headerNotices 404 in 14740ms
+ GET /api/announcement 404 in 14774ms
+Error: Failed to fetch header notices
+    at getHeaderNotice (app\components\HeaderNotice.tsx:11:12)
+    at async HeaderNotice (app\components\HeaderNotice.tsx:22:17)
+   9 |
+  10 |     if (!res.ok) {
+> 11 |       throw new Error('Failed to fetch header notices');
+     |            ^
+  12 |     }
+  13 |
+  14 |     return res.json();
+ ○ Compiling /api/events ...
+ ⚠ The "images.domains" configuration is deprecated. Please use "images.remotePatterns" configuration instead.
+ ✓ Compiled /api/events in 9.6s (1580 modules)
+[2025-11-18T08:30:37.340Z]  @firebase/firestore: Firestore (11.1.0): GrpcConnection RPC 'Listen' stream 0x1ab19d0a error. Code: 3 Message: 3 INVALID_ARGUMENT: Invalid resource field value in the request.
+[2025-11-18T08:30:37.349Z]  @firebase/firestore: Firestore (11.1.0): Could not reach Cloud Firestore backend. Connection failed 1 times. Most recent error: FirebaseError: [code=invalid-argument]: 3 INVALID_ARGUMENT: Invalid resource field value in the request.
+This typically indicates that your device does not have a healthy Internet connection at the moment. The client will operate in offline mode until it is able to successfully connect to the backend.
+ GET /api/events 404 in 12241ms
+ ○ Compiling /api/homepage ...
+ ✓ Compiled /api/homepage in 4s (1582 modules)
+[2025-11-18T08:30:43.368Z]  @firebase/firestore: Firestore (11.1.0): GrpcConnection RPC 'Listen' stream 0x73b0de60 error. Code: 3 Message: 3 INVALID_ARGUMENT: Invalid resource field value in the request.
+[2025-11-18T08:30:43.373Z]  @firebase/firestore: Firestore (11.1.0): Could not reach Cloud Firestore backend. Connection failed 1 times. Most recent error: FirebaseError: [code=invalid-argument]: 3 INVALID_ARGUMENT: Invalid resource field value in the request.
+This typically indicates that your device does not have a healthy Internet connection at the moment. The client will operate in offline mode until it is able to successfully connect to the backend.
+ GET /api/homepage 404 in 5143ms
+ ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+    at map (app\components\SideHeroSection.tsx:54:29)
+  52 |
+  53 |         <div className="grid max-sm:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-[1175px] max-sm:gap-10 mx-auto gap-10 max-lg:gap-4">
+> 54 |             {homepageActions.map((card) => (
+     |                             ^
+  55 |                 <HomeCard key={card.orderId} card={card} />
+  56 |             ))}
+  57 |         </div> {
+  digest: '3408523771'
+}
+ ⨯ TypeError: Cannot read properties of undefined (reading 'isLive')
+    at isLive (app\components\HomeHero.jsx:34:61)
+  32 |
+  33 |     return () => clearInterval(interval);
+> 34 |   }, [currentIndex, isPaused, heroSlidesData?.length, ytData.isLive]);
+     |                                                             ^
+  35 |
+  36 |   // Handle infinite loop transitions
+  37 |   useEffect(() => { {
+  digest: '897065257'
+}
+ GET / 200 in 63262ms
+ ✓ Compiled /favicon.ico in 422ms (899 modules)
+ GET /favicon.ico 200 in 547ms
+ ○ Compiling /_not-found ...
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled /_not-found in 12.8s (1588 modules)
+ ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+[2025-11-18T08:31:12.989Z]  @firebase/firestore: Firestore (11.1.0): GrpcConnection RPC 'Listen' stream 0x4113abea error. Code: 3 Message: 3 INVALID_ARGUMENT: Invalid resource field value in the request.
+[2025-11-18T08:31:12.996Z]  @firebase/firestore: Firestore (11.1.0): Could not reach Cloud Firestore backend. Connection failed 1 times. Most recent error: FirebaseError: [code=invalid-argument]: 3 INVALID_ARGUMENT: Invalid resource field value in the request.
+This typically indicates that your device does not have a healthy Internet connection at the moment. The client will operate in offline mode until it is able to successfully connect to the backend.
+ GET /api/headerNotices 404 in 1437ms
+ GET /api/headerNotices 404 in 1386ms
+ GET /api/announcement 404 in 1389ms
+Error: Failed to fetch header notices
+    at getHeaderNotice (app\components\HeaderNotice.tsx:11:12)
+    at async HeaderNotice (app\components\HeaderNotice.tsx:22:17)
+   9 |
+  10 |     if (!res.ok) {
+> 11 |       throw new Error('Failed to fetch header notices');
+     |            ^
+  12 |     }
+  13 |
+  14 |     return res.json();
+Error: Failed to fetch header notices
+    at getHeaderNotice (app\components\HeaderNotice.tsx:11:12)
+    at async HeaderNotice (app\components\HeaderNotice.tsx:22:17)
+   9 |
+  10 |     if (!res.ok) {
+> 11 |       throw new Error('Failed to fetch header notices');
+     |            ^
+  12 |     }
+  13 |
+  14 |     return res.json();
+[2025-11-18T08:31:13.365Z]  @firebase/firestore: Firestore (11.1.0): GrpcConnection RPC 'Listen' stream 0x4113abeb error. Code: 3 Message: 3 INVALID_ARGUMENT: Invalid resource field value in the request.
+ GET /api/events 404 in 193ms
+[2025-11-18T08:31:14.883Z]  @firebase/firestore: Firestore (11.1.0): GrpcConnection RPC 'Listen' stream 0x4113abec error. Code: 3 Message: 3 INVALID_ARGUMENT: Invalid resource field value in the request.
+ GET /api/homepage 404 in 1418ms
+ ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+    at map (app\components\SideHeroSection.tsx:54:29)
+  52 |
+  53 |         <div className="grid max-sm:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-[1175px] max-sm:gap-10 mx-auto gap-10 max-lg:gap-4">
+> 54 |             {homepageActions.map((card) => (
+     |                             ^
+  55 |                 <HomeCard key={card.orderId} card={card} />
+  56 |             ))}
+  57 |         </div> {
+  digest: '3408523771'
+}
+ ⨯ TypeError: Cannot read properties of undefined (reading 'isLive')
+    at isLive (app\components\HomeHero.jsx:34:61)
+  32 |
+  33 |     return () => clearInterval(interval);
+> 34 |   }, [currentIndex, isPaused, heroSlidesData?.length, ytData.isLive]);
+     |                                                             ^
+  35 |
+  36 |   // Handle infinite loop transitions
+  37 |   useEffect(() => { {
+  digest: '897065257'
+}
+ GET / 200 in 8392ms
+ GET /favicon.ico 200 in 439ms
+[2025-11-18T08:31:42.046Z]  @firebase/firestore: Firestore (11.1.0): GrpcConnection RPC 'Listen' stream 0x4113abed error. Code: 3 Message: 3 INVALID_ARGUMENT: Invalid resource field value in the request.
+ GET /api/headerNotices 404 in 1190ms
+[2025-11-18T08:31:49.462Z]  @firebase/firestore: Firestore (11.1.0): GrpcConnection RPC 'Listen' stream 0x4113abee error. Code: 3 Message: 3 INVALID_ARGUMENT: Invalid resource field value in the request.
+ GET /api/headerNotices 404 in 399ms
+ GET /api/announcement 404 in 374ms
+Error: Failed to fetch header notices
+    at getHeaderNotice (app\components\HeaderNotice.tsx:11:12)
+    at async HeaderNotice (app\components\HeaderNotice.tsx:22:17)
+   9 |
+  10 |     if (!res.ok) {
+> 11 |       throw new Error('Failed to fetch header notices');
+     |            ^
+  12 |     }
+  13 |
+  14 |     return res.json();
+[2025-11-18T08:31:49.974Z]  @firebase/firestore: Firestore (11.1.0): GrpcConnection RPC 'Listen' stream 0x4113abef error. Code: 3 Message: 3 INVALID_ARGUMENT: Invalid resource field value in the request.
+ GET /api/events 404 in 252ms
+[2025-11-18T08:31:56.906Z]  @firebase/firestore: Firestore (11.1.0): GrpcConnection RPC 'Listen' stream 0x4113abf0 error. Code: 3 Message: 3 INVALID_ARGUMENT: Invalid resource field value in the request.
+ GET /api/homepage 404 in 6320ms
+ ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+    at map (app\components\SideHeroSection.tsx:54:29)
+  52 |
+  53 |         <div className="grid max-sm:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-[1175px] max-sm:gap-10 mx-auto gap-10 max-lg:gap-4">
+> 54 |             {homepageActions.map((card) => (
+     |                             ^
+  55 |                 <HomeCard key={card.orderId} card={card} />
+  56 |             ))}
+  57 |         </div> {
+  digest: '3408523771'
+}
+ ⨯ TypeError: Cannot read properties of undefined (reading 'isLive')
+    at isLive (app\components\HomeHero.jsx:34:61)
+  32 |
+  33 |     return () => clearInterval(interval);
+> 34 |   }, [currentIndex, isPaused, heroSlidesData?.length, ytData.isLive]);
+     |                                                             ^
+  35 |
+  36 |   // Handle infinite loop transitions
+  37 |   useEffect(() => { {
+  digest: '897065257'
