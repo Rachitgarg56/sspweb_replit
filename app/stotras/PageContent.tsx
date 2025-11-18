@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Aside from "../components/Aside";
 import DeityComponent from "../components/DeityComponent";
 import BreadCrumbs from "../components/BreadCrumbs";
-import { CLIENT_API_URL } from "../../config/api";
+import { API_URL } from "../../config/api";
 import Loader from "../components/Loader";
 import { Deity } from "../src/types";
 import { headings } from "../../utils/constants.js"
@@ -47,7 +47,7 @@ const PageContent = ({ isLoading, setLoading, lang1, lang2, setLang1, setLang2 }
       async function getDeities() {
         setLoading(true);
         try {
-          const res = await fetch(`${CLIENT_API_URL}stotras`);
+          const res = await fetch(`${API_URL}stotras`);
           const parsedRes = await res.json();
           setDeities(parsedRes);
         } catch (error) {
@@ -58,7 +58,7 @@ const PageContent = ({ isLoading, setLoading, lang1, lang2, setLang1, setLang2 }
       }
       async function getCollections() {
         try {
-          const res = await fetch(`${CLIENT_API_URL}stotraCollections`);
+          const res = await fetch(`${API_URL}stotraCollections`);
           const parsedRes = await res.json();
           setCollections(parsedRes);
         } catch (error) {
