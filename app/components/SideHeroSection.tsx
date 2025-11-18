@@ -40,6 +40,10 @@ const homeCards = [
 ];
 
 const SideHeroSection = ({homepageActions}) => {
+  const reorderedCards = homepageActions && homepageActions.length >= 3 
+    ? [homepageActions[2], homepageActions[1], homepageActions[0]]
+    : homepageActions;
+
   return (
     <section className='relative py-12 max-sm:py-6 px-4'>
         <div className='absolute top-0 left-0 w-full h-full -z-10'>
@@ -51,7 +55,7 @@ const SideHeroSection = ({homepageActions}) => {
         </div>
 
         <div className="grid max-sm:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-[1175px] max-sm:gap-10 mx-auto gap-10 max-lg:gap-4">
-            {homepageActions.map((card) => (
+            {reorderedCards.map((card) => (
                 <HomeCard key={card.orderId} card={card} />
             ))}
         </div>
