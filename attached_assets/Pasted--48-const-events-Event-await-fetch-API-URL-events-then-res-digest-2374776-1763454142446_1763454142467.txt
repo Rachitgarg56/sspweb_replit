@@ -1,0 +1,131 @@
+  48 |   const events: Event[] = await fetch(API_URL + "events").then((res) => {
+  digest: '2374776676',
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+ GET / 200 in 26836ms
+ ✓ Compiled in 5.8s (699 modules)
+ ⚠ The "images.domains" configuration is deprecated. Please use "images.remotePatterns" configuration instead.
+ ○ Compiling /contact/departments ...
+ ✓ Compiled /contact/departments in 12.3s (1451 modules)
+Image with src "/_next/static/media/events_hero.0aecd755.jpg" has legacy prop "layout". Did you forget to run the codemod?
+Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
+ ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:5000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+TypeError: fetch failed
+    at async getHeaderNotice (app\components\HeaderNotice.tsx:6:16)
+    at async HeaderNotice (app\components\HeaderNotice.tsx:22:17)
+  4 | async function getHeaderNotice() {
+  5 |   try {
+> 6 |     const res = await fetch(`${API_URL}headerNotices`, {
+    |                ^
+  7 |       cache: 'no-store',
+  8 |     });
+  9 |      {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+ ⨯ TypeError: fetch failed
+    at async Departments (app\contact\departments\page.tsx:53:20)
+  51 |
+  52 | export default async function Departments() {
+> 53 |   const parsedRes = await fetch(API_URL+'contact/departments');
+     |                    ^
+  54 |   const departments = await parsedRes.json();
+  55 |   return (
+  56 |     <div className="min-h-screen bg-[--gray-100] py-8 text-[--brown-dark]"> {
+  digest: '2502237949',
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+ GET /contact/departments 200 in 16911ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ○ Compiling /middleware ...
+ ✓ Compiled /middleware in 5s (98 modules)
+ ○ Compiling /api/contact/departments ...
+ ✓ Compiled /api/contact/departments in 5.1s (1602 modules)
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[2025-11-18T08:16:52.971Z]  @firebase/firestore: Firestore (11.1.0): GrpcConnection RPC 'Listen' stream 0x7a33b854 error. Code: 3 Message: 3 INVALID_ARGUMENT: Invalid resource field value in the request.
+[2025-11-18T08:16:52.977Z]  @firebase/firestore: Firestore (11.1.0): Could not reach Cloud Firestore backend. Connection failed 1 times. Most recent error: FirebaseError: [code=invalid-argument]: 3 INVALID_ARGUMENT: Invalid resource field value in the request.
+This typically indicates that your device does not have a healthy Internet connection at the moment. The client will operate in offline mode until it is able to successfully connect to the backend.
+ GET /api/contact/departments 404 in 8422ms
+Image with src "/_next/static/media/events_hero.0aecd755.jpg" has legacy prop "layout". Did you forget to run the codemod?
+Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
+ ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:5000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+TypeError: fetch failed
+    at async getHeaderNotice (app\components\HeaderNotice.tsx:6:16)
+    at async HeaderNotice (app\components\HeaderNotice.tsx:22:17)
+  4 | async function getHeaderNotice() {
+  5 |   try {
+> 6 |     const res = await fetch(`${API_URL}headerNotices`, {
+    |                ^
+  7 |       cache: 'no-store',
+  8 |     });
+  9 |      {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+ ⨯ TypeError: fetch failed
+    at async Departments (app\contact\departments\page.tsx:53:20)
+  51 |
+  52 | export default async function Departments() {
+> 53 |   const parsedRes = await fetch(API_URL+'contact/departments');
+     |                    ^
+  54 |   const departments = await parsedRes.json();
+  55 |   return (
+  56 |     <div className="min-h-screen bg-[--gray-100] py-8 text-[--brown-dark]"> {
+  digest: '2502237949',
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+ GET /contact/departments 200 in 1364ms
+ ○ Compiling /favicon.ico ...
+ ✓ Compiled /favicon.ico in 3.9s (911 modules)
+ GET /favicon.ico 200 in 5293ms
+[2025-11-18T08:17:08.591Z]  @firebase/firestore: Firestore (11.1.0): GrpcConnection RPC 'Listen' stream 0x61c558cc error. Code: 3 Message: 3 INVALID_ARGUMENT: Invalid resource field value in the request.
+[2025-11-18T08:17:08.617Z]  @firebase/firestore: Firestore (11.1.0): Could not reach Cloud Firestore backend. Connection failed 1 times. Most recent error: FirebaseError: [code=invalid-argument]: 3 INVALID_ARGUMENT: Invalid resource field value in the request.
+This typically indicates that your device does not have a healthy Internet connection at the moment. The client will operate in offline mode until it is able to successfully connect to the backend.
+ GET /api/contact/departments 404 in 2324ms
+ ○ Compiling /api/headerNotices ...
+ ✓ Compiled /api/headerNotices in 40.3s (1606 modules)
+ GET /api/headerNotices 200 in 41974ms
+[2025-11-18T08:18:10.136Z]  @firebase/firestore: Firestore (11.1.0): GrpcConnection RPC 'Listen' stream 0x15d77c82 error. Code: 3 Message: 3 INVALID_ARGUMENT: Invalid resource field value in the request.
+[2025-11-18T08:18:10.148Z]  @firebase/firestore: Firestore (11.1.0): Could not reach Cloud Firestore backend. Connection failed 1 times. Most recent error: FirebaseError: [code=invalid-argument]: 3 INVALID_ARGUMENT: Invalid resource field value in the request.
+This typically indicates that your device does not have a healthy Internet connection at the moment. The client will operate in offline mode until it is able to successfully connect to the backend.
+ ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:5000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+TypeError: fetch failed
+    at async getHeaderNotice (app\components\HeaderNotice.tsx:6:16)
+    at async HeaderNotice (app\components\HeaderNotice.tsx:22:17)
+  4 | async function getHeaderNotice() {
+  5 |   try {
+> 6 |     const res = await fetch(`${API_URL}headerNotices`, {
+    |                ^
+TypeError: fetch failed
+    at async getHeaderNotice (app\components\HeaderNotice.tsx:6:16)
+    at async HeaderNotice (app\components\HeaderNotice.tsx:22:17)
+  4 | async function getHeaderNotice() {
+  5 |   try {
+> 6 |     const res = await fetch(`${API_URL}headerNotices`, {
+    |                ^
+  7 |       cache: 'no-store',
+  8 |     });
+  9 |      {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+> 6 |     const res = await fetch(`${API_URL}headerNotices`, {
+    |                ^
+  7 |       cache: 'no-store',
+  8 |     });
+  9 |      {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+  7 |       cache: 'no-store',
+  8 |     });
+  9 |      {
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }
+}
+ ⨯ TypeError: fetch failed
+    at async Home (app\page.tsx:45:40)
+  43 |
+  44 | export default async function Home() {
+> 45 |   const announcements: Announcement[] = await fetch(
+     |                                        ^
+  46 |     API_URL + "announcement"
+  47 |   ).then((res) => res.json());
+  48 |   const events: Event[] = await fetch(API_URL + "events").then((res) => {
+  digest: '2374776676',
+  [cause]: [AggregateError: ] { code: 'ECONNREFUSED' }

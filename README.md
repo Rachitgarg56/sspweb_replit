@@ -7,11 +7,11 @@ Next.js implementation of the SSP main website - works seamlessly on both Replit
 ### Running on Replit
 
 **No setup needed!** The project automatically detects Replit and configures itself:
-- Runs on port 5000
+- Runs on port 5000 using `npm run dev:replit`
 - Auto-detects environment via `REPL_ID`
 - Uses your configured Replit Secrets
 
-Just click "Run" and you're good to go!
+Just click "Run" and you're good to go! The workflow is pre-configured to use the correct command.
 
 ### Running Locally
 
@@ -139,8 +139,18 @@ This ensures API calls work correctly in both environments without code changes!
 ├── utils/                   # Helper functions
 ├── public/                  # Static assets
 ├── .env.local.example      # Environment template
+├── package.json            # NPM scripts
 └── README.md               # This file
 ```
+
+## 📦 NPM Scripts
+
+- `npm run dev` - Start local development server on **port 3000**
+- `npm run dev:replit` - Start Replit development server on **port 5000** (used by Replit workflow)
+- `npm run build` - Build for production
+- `npm run start` - Start production server (default port)
+- `npm run start:replit` - Start production server on port 5000 (for Replit)
+- `npm run lint` - Run ESLint
 
 ## 🔑 Key Features
 
@@ -172,9 +182,10 @@ const data = await fetch(`${API_URL}endpoint`);
 
 ### Port Configuration
 
-- **Do NOT hardcode ports** in your code
-- Use `API_URL` from config
-- Server runs on port 5000 (Replit) or 3000 (localhost) automatically
+- **Replit:** Uses `npm run dev:replit` which runs on port 5000
+- **Local:** Uses `npm run dev` which runs on port 3000 (Next.js default)
+- **Code:** Always use `API_URL` from `config/api.ts` - never hardcode ports
+- The environment detection in `config/api.ts` automatically selects the correct port
 
 ## 🐛 Known Issues
 

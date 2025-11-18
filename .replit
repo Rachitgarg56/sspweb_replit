@@ -21,22 +21,18 @@ args = "nextjs-dev-server"
 name = "nextjs-dev-server"
 author = "agent"
 
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "npm run dev"
-waitForPort = 5000
-
 [workflows.workflow.metadata]
 outputType = "webview"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run dev:replit"
+waitForPort = 5000
 
 [[ports]]
 localPort = 5000
 externalPort = 80
 
 [[ports]]
-localPort = 35497
-externalPort = 3001
-
-[[ports]]
-localPort = 40279
+localPort = 33337
 externalPort = 3000
