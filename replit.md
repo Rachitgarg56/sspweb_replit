@@ -10,6 +10,18 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
+### November 18, 2025 - Environment-Agnostic API Configuration
+- Completely refactored API URL handling to work seamlessly on both Replit and localhost
+- Implemented automatic environment detection:
+  - Detects Replit via REPL_ID environment variable
+  - Automatically uses correct port (5000 for Replit, 3000 for localhost)
+  - Client-side uses relative URLs (/api/) for both environments
+  - Server-side uses absolute URLs with correct port
+- Removed all hardcoded URLs and port dependencies
+- Created .env.local.example for easy local setup
+- Project now works identically on Replit and local machines without code changes
+- Updated config/api.ts with intelligent environment detection
+
 ### November 17, 2025 - Complete API Configuration Fix for Replit Environment
 - Fixed all API URL configuration issues for client-side components in Replit's proxy environment
   - Created separate CLIENT_API_URL constant for client components (uses relative paths /api/)
