@@ -10,6 +10,13 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
+### November 18, 2025 - Complete Localhost/Replit Compatibility Fix (FINAL)
+- **CRITICAL FIX**: Restored Firebase fallback credentials in app/src/firebase.ts
+  - Firebase credentials now use environment variables on Replit (from Secrets)
+  - Fall back to hardcoded credentials for local development (no .env.local needed)
+  - Eliminates need for local environment file setup
+  - Makes local development work out-of-the-box after npm install
+
 ### November 18, 2025 - Complete Localhost/Replit Compatibility Fix
 - **FINAL FIX**: Separated npm scripts for Replit and local development
   - Created `npm run dev` (port 3000) for local development

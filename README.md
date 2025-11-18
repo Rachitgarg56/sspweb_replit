@@ -20,56 +20,44 @@ Just click "Run" and you're good to go! The workflow is pre-configured to use th
    npm install
    ```
 
-2. **Set up environment variables**
-   
-   Create `.env.local` file:
-   ```bash
-   cp .env.local.example .env.local
-   ```
-
-   **IMPORTANT:** Edit `.env.local` and set:
-   ```
-   NEXT_PUBLIC_BASE_URL=http://localhost:3000
-   ```
-
-   Also add your Firebase and Typesense credentials.
-
-3. **Run the development server**
+2. **Run the development server**
    ```bash
    npm run dev
    ```
 
    Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## 📋 Required Environment Variables
+**That's it!** The app includes fallback Firebase credentials for local development, so no additional setup is required.
+
+## 📋 Environment Variables
+
+### For Replit
+
+All environment variables are stored in **Replit Secrets**:
+- Firebase credentials (6 variables)
+- Typesense configuration
+- CRON secret
+
+The app automatically uses these on Replit.
 
 ### For Local Development
 
-Create a `.env.local` file with:
+**No setup required!** The app includes fallback credentials for local development.
+
+**Optional:** If you want to use custom Firebase credentials locally, create a `.env.local` file:
 
 ```env
-# Base URL (REQUIRED)
 NEXT_PUBLIC_BASE_URL=http://localhost:3000
-
-# Firebase (REQUIRED)
 NEXT_PUBLIC_FIREBASE_API_KEY=your_key
 NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_domain
 NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
 NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_bucket
 NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
 NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
-
-# Typesense (REQUIRED)
 TYPESENSE_API_KEY=your_key
 TYPESENSE_HOST=your_host
-
-# CRON
 CRON_SECRET=your_secret
 ```
-
-### For Replit
-
-All environment variables are stored in **Replit Secrets**. The `NEXT_PUBLIC_BASE_URL` is automatically detected - no manual configuration needed!
 
 ## 🔧 How It Works
 
@@ -100,14 +88,14 @@ This ensures API calls work correctly in both environments without code changes!
 
 ## 🛠️ Troubleshooting
 
-### "ECONNREFUSED" Error
+### API Routes Returning 404
 
-**Problem:** API calls failing with connection refused error.
+**Problem:** All API routes failing with 404 errors.
 
 **Solution:**
-1. Verify `.env.local` exists (local only)
-2. Check `NEXT_PUBLIC_BASE_URL` is set correctly
-3. Ensure port matches your dev server (3000 locally, 5000 on Replit)
+1. Make sure Firebase credentials are configured correctly
+2. On Replit: Check Replit Secrets are set
+3. On localhost: App uses fallback credentials automatically
 4. Restart the development server
 
 ### Changes Not Reflecting
@@ -118,14 +106,16 @@ This ensures API calls work correctly in both environments without code changes!
 
 ### Environment Variables Not Loading
 
-**Local:**
-- File must be named `.env.local` (not `.env`)
-- Must be in project root
-- Restart dev server after changes
-
 **Replit:**
-- Check Replit Secrets panel
-- Secrets are automatically available
+- Check Replit Secrets panel has all required Firebase variables
+- Secrets are automatically available to the app
+
+**Local:**
+- No environment file needed (uses fallback credentials)
+- Optional: Create `.env.local` to override defaults
+- File must be named `.env.local` (not `.env`) if created
+- Must be in project root directory
+- Restart dev server after creating/changing environment file
 
 ## 📁 Project Structure
 
